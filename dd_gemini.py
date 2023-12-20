@@ -114,10 +114,11 @@ class CalcBotHandler(dingtalk_stream.ChatbotHandler):
 
 
 def main():
-    try:
-        credential = dingtalk_stream.Credential(client_id, client_secret)
-        client = dingtalk_stream.DingTalkStreamClient(credential)
-        client.register_callback_handler(dingtalk_stream.ChatbotMessage.TOPIC, CalcBotHandler())
-        client.start_forever()
-    except Exception as err:
-        print(err)
+    while True:
+        try:
+            credential = dingtalk_stream.Credential(client_id, client_secret)
+            client = dingtalk_stream.DingTalkStreamClient(credential)
+            client.register_callback_handler(dingtalk_stream.ChatbotMessage.TOPIC, CalcBotHandler())
+            client.start_forever()
+        except Exception as err:
+            print(err)
