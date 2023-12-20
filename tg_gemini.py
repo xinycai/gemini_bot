@@ -85,4 +85,8 @@ async def echo_message(message):
 
 async def main():
     # 启动机器人
-    await bot.polling()
+    while True:
+        try:
+            await bot.polling()
+        except Exception as err:
+            print(err)
