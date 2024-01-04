@@ -1,0 +1,11 @@
+{
+  "GOOGLE_API_KEY": "AIzaSyCtJgZ1PZnoHwkH9lYDG0wJ34wiIjqiH_o",
+  "tg": {
+    "bot_token": "6757191130:AAFIyxAo9_Rb6BgV_bVnpaBT6QFQff9RA5s",
+    "chat_id": [5220311563, -1001996197242, -1002056343188]
+  },
+  "dd": {
+    "client_id": "dingrfl27spqgkiaw1k9",
+    "client_secret": "04GgmiIiB6nPF8q-LVw4jp5OLd6VAM9Du-vu03jTaxbI1U_ieRb2ztvFR02lu9D3"
+  }
+}
