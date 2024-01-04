@@ -14,7 +14,7 @@ pip install google.generativeai telebot dingtalk_stream
 
 ## 配置
 
-在运行项目之前，请确保在config.json中配置了以下参数：
+在运行项目之前，请确保在config/config.json中配置了以下参数：
 
 - `GOOGLE_API_KEY`: 你的 Google API 密钥
 - `bot_token`: 你的 Telegram 机器人令牌
