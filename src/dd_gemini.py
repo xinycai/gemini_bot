@@ -110,7 +110,7 @@ def run(GOOGLE_API_KEY, client_id, client_secret):
                     logging.info(f"{logotype}[{user_id}] 回复用户消息：" + response.text)
                     logging.info(f"{logotype}[{user_id}] 解锁，开始接收消息")
                 except Exception as e:
-                    logging.error(logotype + str(err).replace('\n', ' '))
+                    logging.error(logotype + str(e).replace('\n', ' '))
                     await self.reply_text("发生了异次元危机：" + str(
                         e) + '\n\n如果这个神秘咒语持续出现，可以回复[万物复苏]让我将所有的一切恢复到最开始的状态！',
                                           incoming_message)
