@@ -28,11 +28,13 @@ pip install google.generativeai telebot dingtalk_stream
 在项目根目录下运行以下命令启动应用：
 
 ```bash
-python main.py
+python app.py
 ```
 
 ## 注意事项
 
+- [详细教程](https://blog.xiny.cc/archives/s3rPJssW)
 - 请提前申请并配置好 [Google API 密钥](https://ai.google.dev/pricing)。
 - 在 Telegram 上创建一个新的机器人并[获取机器人令牌和聊天ID](https://blog.xiny.cc/archives/mTaUz0TW)。
 - 在钉钉开放平台上创建一个新的机器人并[获取机器人 ID 和密钥](https://blog.xiny.cc/archives/tJNIk1Xa)。
+- 钉钉群需要@机器人才能获得回复，TG机器人接收群消息需要在消息前加上/g，例：“/g 你是哪个公司研发的？”
