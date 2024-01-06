@@ -106,7 +106,11 @@ def run(GOOGLE_API_KEY, client_id, client_secret):
                         return AckMessage.STATUS_OK, 'OK'
                     dd_message[user_id]['chat'].append({'role': 'model',
                                                         'parts': [response.text]})
-                    await self.reply_text(response.text, incoming_message)
+                    max_chunk_size = 2000
+                    for i in range(0, len(response.text), max_chunk_size):
+                        chunk = response.text[i:i + max_chunk_size]
+                        await self.reply_text(chunk, incoming_message)
+
                     logging.info(f"{logotype}[{user_id}] 回复用户消息：" + response.text)
                     logging.info(f"{logotype}[{user_id}] 解锁，开始接收消息")
                 except Exception as e:

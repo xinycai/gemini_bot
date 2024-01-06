@@ -90,7 +90,11 @@ def run(GOOGLE_API_KEY, bot_token, chat_id):
                 return
             tg_message[user_id]['chat'].append({'role': 'model',
                                                 'parts': [response.text]})
-            await bot.send_message(message.chat.id, response.text)
+            max_chunk_size = 2000
+            for i in range(0, len(response.text), max_chunk_size):
+                chunk = response.text[i:i + max_chunk_size]
+                await bot.send_message(message.chat.id, chunk)
+
             logging.info(f"{logotype}[{user_id}] 回复用户消息：" + response.text)
             logging.info(f"{logotype}[{user_id}] 解锁，开始接收消息")
 
