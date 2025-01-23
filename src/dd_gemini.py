@@ -107,8 +107,8 @@ def run(GOOGLE_API_KEY, client_id, client_secret):
                     dd_message[user_id]['chat'].append({'role': 'model',
                                                         'parts': [response.text.replace('*', '')]})
                     max_chunk_size = 2000
-                    for i in range(0, len(response.text), max_chunk_size):
-                        chunk = response.text[i:i + max_chunk_size]
+                    for i in range(0, len(response.text.replace('*', '')), max_chunk_size):
+                        chunk = response.text.replace('*', '')[i:i + max_chunk_size]
                         await self.reply_text(chunk, incoming_message)
 
                     logging.info(f"{logotype}[{user_id}] 回复用户消息：" + response.text)
