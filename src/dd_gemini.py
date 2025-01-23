@@ -105,7 +105,7 @@ def run(GOOGLE_API_KEY, client_id, client_secret):
                         await self.reply_text("此次回答被神秘的力量干扰，无法回答哦，请换个问题吧！", incoming_message)
                         return AckMessage.STATUS_OK, 'OK'
                     dd_message[user_id]['chat'].append({'role': 'model',
-                                                        'parts': [response.text]})
+                                                        'parts': [response.text.replace('*', '')]})
                     max_chunk_size = 2000
                     for i in range(0, len(response.text), max_chunk_size):
                         chunk = response.text[i:i + max_chunk_size]
