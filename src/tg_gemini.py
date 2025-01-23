@@ -23,7 +23,7 @@ def run(GOOGLE_API_KEY, bot_token, chat_id):
     }
     MAX_TOKENS_LIMIT = 32000
 
-    model = genai.GenerativeModel(model_name="gemini-pro",
+    model = genai.GenerativeModel(model_name="gemini-2.0-flash-exp",
                                   generation_config=genai.GenerationConfig(**generation_config))
 
     logging.info(logotype + "启动TG-Gemini成功，开始接收消息")
